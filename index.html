@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071116" />
+    <title>PS Access — Profile Editor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="masthead">
+        <div class="brand"><span class="brand-mark">PS</span><span>ACCESS</span></div>
+        <p class="eyebrow">Controller configuration</p>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="kicker">PlayStation Access Controller</p>
+          <h1>Profile editor</h1>
+          <p class="subhead">Configure your controller profiles directly from your computer.</p>
+        </div>
+        <div class="connection-card" id="connection-card">
+          <span class="connection-light"></span>
+          <span id="connection-text">Controller not connected</span>
+          <button class="outline-button" id="connect-button">Connect controller</button>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="Controller actions">
+        <button id="load-button" class="action-button secondary">Load from controller</button>
+        <button id="save-button" class="action-button" disabled>Save to controller</button>
+        <button id="test-button" class="action-button secondary">Test controller</button>
+        <span class="status" id="status" aria-live="polite">Connect a controller to edit and save profiles.</span>
+      </section>
+
+      <section class="workspace">
+        <aside class="sidebar">
+          <div class="side-title">Profiles</div>
+          <nav class="profile-tabs" aria-label="Profiles">
+            <button class="profile-tab active" data-profile="0"><span>01</span> Profile 1</button>
+            <button class="profile-tab" data-profile="1"><span>02</span> Profile 2</button>
+            <button class="profile-tab" data-profile="2"><span>03</span> Profile 3</button>
+          </nav>
+          <button class="readme-link" id="readme-button">About this editor <span>↗</span></button>
+        </aside>
+
+        <section class="editor-panel">
+            <div class="panel-header">
+              <div>
+                <p class="section-label">Active profile</p>
+                <h2 id="profile-name">Profile 1</h2>
+              </div>
+              <div class="panel-controls">
+                <label class="orientation">Action style
+                  <select id="action-style"><option value="playstation">PlayStation</option><option value="android">Android</option></select>
+                </label>
+              </div>
+            </div>
+            <div class="orientation-section">
+              <div>
+                <p class="section-label">Controller position</p>
+                <h3>Orientation</h3>
+              </div>
+              <label class="orientation orientation-choice">Choose stick position
+                <select id="orientation"><option value="3">Stick on the left</option><option value="2">Stick above</option><option value="1">Stick on the right</option><option value="0">Stick below</option></select>
+              </label>
+            </div>
+            <div class="column-head"><span>Physical control</span><span>Assigned action</span><span>Options</span></div>
+          <div id="mapping-list" class="mapping-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="readme-dialog">
+      <button class="close" id="close-dialog" aria-label="Close">×</button>
+      <p class="kicker">README</p>
+      <h2>PlayStation Access Controller Profile Editor</h2>
+      <p>This local editor lets you organize button mappings for three controller profiles. Saving is simulated in this offline version; connect a compatible controller in the original web editor to write profiles over USB.</p>
+      <p>For the best experience with both PS5 and PC, configure shared profiles on your PS5. Button behavior can vary by game or software.</p>
+    </dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
