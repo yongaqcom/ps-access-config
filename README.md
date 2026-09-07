@@ -1,4 +1,4 @@
-# ps-access-config
+# PS Access controller web tool
 
 `ps-access-config` is a browser-based configuration tool for the PlayStation Access controller. It connects directly over USB through WebHID, loads all three on-device profiles, lets you edit supported button and expansion-port mappings, and writes changes back while preserving settings the editor does not expose.
 
